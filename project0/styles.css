@@ -48,6 +48,11 @@ ul {
   overflow-y: auto;
 }
 
+.todo-element {
+  border-bottom: 2px black;
+  display: inline;
+}
+
 .todo-delete {
   margin: 10px;
 }

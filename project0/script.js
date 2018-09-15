@@ -13,32 +13,43 @@ const check = document.getElementsByClassName('check')
 var count = 0
 itemCountSpan.innerHTML = count
 
-var unchecked = 0
-uncheckedCountSpan.innerHTML = unchecked
+var uncheckedCount = 0
+uncheckedCountSpan.innerHTML = uncheckedCount
 
 function newTodo() {
   count++
   itemCountSpan.innerHTML = count
-  unchecked++
-  uncheckedCountSpan.innerHTML = unchecked
+  uncheckedCount++
+  uncheckedCountSpan.innerHTML = uncheckedCount
 
+  // Input for new todo
   var toDo = prompt("New To-Do")
+
+  // Create checkbox
   const checkBox = list.appendChild(document.createElement('input'))
   checkBox.setAttribute('type', 'checkbox')
   checkBox.setAttribute('class', 'check')
-  const listElement = list.appendChild(document.createElement('li'))
-  listElement.innerHTML = toDo;
 
+  // Create list element
+  const listElement = list.appendChild(document.createElement('li'))
+  listElement.setAttribute('class', 'todo-element')
+
+
+  // Assign text to todo
+  listElement.innerHTML = toDo
+
+  // Create delete button
   // const deleteButton = listElement.appendChild(document.createElement('button'))
   // deleteButton.setAttribute('class', 'button')
+  // deleteButton.innerHTML = "x"
   // deleteButton.setAttribute('onClick', 'deleteTodo()')
 }
 
-if (check.checked == true) {
-  unchecked--
-  uncheckedCountSpan.innerHTML = unchecked
+if (checkBox.checked == true) {
+  uncheckedCount--
+  uncheckedCountSpan.innerHTML = uncheckedCount
 }
 
 // function deleteTodo() {
-//
+//   deleteButton.parentNode.parentNode.removeChild()
 // }
